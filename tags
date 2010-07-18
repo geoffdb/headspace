@@ -1,0 +1,32 @@
+1279418895
+AbstractServo	/home/thomas/Documents/Projects/headspace/includes/abstract_servo.rb	class AbstractServo
+AbstractServoController	/home/thomas/Documents/Projects/headspace/includes/abstract_servo_controller.rb	class AbstractServoController
+Array	/home/thomas/Documents/Projects/headspace/includes/utill.rb	class Array
+CommHeader	/home/thomas/Documents/Projects/headspace/includes/servo_controller.rb		CommHeader =
+GridSize	/home/thomas/Documents/Projects/headspace/includes/abstract_servo_controller.rb	  GridSize =
+ReversedByteInteger	/home/thomas/Documents/Projects/headspace/includes/servo_controller.rb	class ReversedByteInteger
+ServoController	/home/thomas/Documents/Projects/headspace/includes/servo_controller.rb	class ServoController
+ServoControllerCommands	/home/thomas/Documents/Projects/headspace/includes/servo_controller_commands.rb	module ServoControllerCommands
+ServoMode	/home/thomas/Documents/Projects/headspace/includes/servo_controller_commands.rb		ServoMode =
+apply_to_hardware	/home/thomas/Documents/Projects/headspace/includes/abstract_servo_controller.rb	  def apply_to_hardware
+channel	/home/thomas/Documents/Projects/headspace/includes/abstract_servo.rb	  attr_reader :in_sync, :position, :channel
+chr	/home/thomas/Documents/Projects/headspace/includes/servo_controller.rb		def chr
+count	/home/thomas/Documents/Projects/headspace/includes/utill.rb	  def count
+find_consecutive_unsynced_servos	/home/thomas/Documents/Projects/headspace/includes/abstract_servo_controller.rb	  def find_consecutive_unsynced_servos
+get_servo	/home/thomas/Documents/Projects/headspace/includes/abstract_servo_controller.rb	  def get_servo
+get_servo	/home/thomas/Documents/Projects/headspace/includes/abstract_servo_controller.rb	  def get_servo
+in_sync	/home/thomas/Documents/Projects/headspace/includes/abstract_servo.rb	  attr_reader :in_sync, :position, :channel
+init_servos	/home/thomas/Documents/Projects/headspace/includes/servo_controller_commands.rb	  def init_servos
+initialize	/home/thomas/Documents/Projects/headspace/includes/abstract_servo.rb	  def initialize
+initialize	/home/thomas/Documents/Projects/headspace/includes/abstract_servo_controller.rb	  def initialize
+initialize	/home/thomas/Documents/Projects/headspace/includes/servo_controller.rb		def initialize
+initialize	/home/thomas/Documents/Projects/headspace/includes/servo_controller.rb		def initialize
+move_servos	/home/thomas/Documents/Projects/headspace/includes/servo_controller_commands.rb		def move_servos
+position	/home/thomas/Documents/Projects/headspace/includes/abstract_servo.rb	  attr_reader :in_sync, :position, :channel
+position	/home/thomas/Documents/Projects/headspace/includes/abstract_servo.rb	  def position
+reverse_byte_int	/home/thomas/Documents/Projects/headspace/includes/servo_controller_commands.rb	  def reverse_byte_int
+send_command	/home/thomas/Documents/Projects/headspace/includes/servo_controller.rb		def send_command
+set_speeds	/home/thomas/Documents/Projects/headspace/includes/servo_controller_commands.rb		def set_speeds
+synced	/home/thomas/Documents/Projects/headspace/includes/abstract_servo.rb	  def synced
+synced?	/home/thomas/Documents/Projects/headspace/includes/abstract_servo.rb	  def synced?
+value	/home/thomas/Documents/Projects/headspace/includes/servo_controller.rb	  attr_reader :value
