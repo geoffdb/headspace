@@ -11,7 +11,7 @@ module ServoControllerCommands
   
   def set_modes(first_servo, modes, count = 1)
     count = modes.to_a.size unless modes.is_a? Integer or count != 1
-		modes = [modes] * count if count > 1 and modes.is_a? Integer 
+		modes = [modes] * count if count > 1 and (modes.is_a? Integer or modes.is_a? Symbol)
 		modes = modes.to_a if modes.is_a? Range
     
     raise ArgumentError, "Not enough modes provided", caller if modes.size < count
