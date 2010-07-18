@@ -61,6 +61,7 @@ module ServoControllerCommands
   
   def get_servo
     # Not implimented, no use to us.
+    # Yea!
   end
 	
 	def set_speeds(first_servo, speeds, count = 1)
