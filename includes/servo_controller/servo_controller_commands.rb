@@ -10,9 +10,8 @@ module ServoControllerCommands
 	end
   
   def set_modes(first_servo, modes, count = 1)
-    count = modes.to_a.size unless modes.is_a? Integer or count != 1
+    count = modes.to_a.size unless modes.is_a? Integer or modes.is_a? Symbol or count != 1
 		modes = [modes] * count if count > 1 and (modes.is_a? Integer or modes.is_a? Symbol)
-		modes = modes.to_a if modes.is_a? Range
     
     raise ArgumentError, "Not enough modes provided", caller if modes.size < count
     
@@ -30,8 +29,6 @@ module ServoControllerCommands
     
     modes = modes[0, count]
     send_command([4, first_servo, modes.size] + modes)
-    
-    true if get_result == 0
   end
   
   def get_mode
@@ -47,8 +44,6 @@ module ServoControllerCommands
     
     locations = locations[0, count]
 		send_command([1, first_servo, locations.size * 2] + locations.map {|x| reverse_byte_int(x)})
-    
-    true if get_result == 0
 	end
   
   def get_servo
@@ -63,15 +58,11 @@ module ServoControllerCommands
     
     speeds = speeds[0, count]
 		send_command([3, first_servo, speeds.size] + speeds)
-    
-    true if get_result == 0
   end
   
   # This is for digital channels, analouge not implimented
   def get_input(channel)
     send_command([8, channel, 0])
-    
-    get_result
   end
   
   private

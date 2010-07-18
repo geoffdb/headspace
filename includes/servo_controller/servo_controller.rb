@@ -53,14 +53,5 @@ class ServoController
     else
       result
     end
-	end
-  
-  def get_result
-    case @link.receive
-    when 0
-      true
-    else
-      false
-    end
   end
 end
