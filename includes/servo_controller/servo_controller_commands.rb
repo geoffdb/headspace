@@ -36,7 +36,7 @@ module ServoControllerCommands
   end
 	
 	def set_servos(first_servo, locations, count = 1)
-    count = locations.to_a.size unless locations.is_a Integer or count != 1
+    count = locations.to_a.size unless locations.is_a? Integer or count != 1
 		locations = [locations] * count if count > 1 and locations.is_a? Integer 
 		locations = locations.to_a if locations.is_a? Range
     
