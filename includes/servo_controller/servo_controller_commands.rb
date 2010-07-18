@@ -81,6 +81,6 @@ module ServoControllerCommands
   private
   
   def reverse_byte_int(value)
-    ReverseByteInteger.new(value)
+    ReversedByteInteger.new(value)
   end
 end
