@@ -10,7 +10,7 @@ module ServoControllerCommands
 	end
   
   def set_modes(first_servo, modes, count = 1)
-    count = modes.to_a.size unless modes.is_a Integer or count != 1
+    count = modes.to_a.size unless modes.is_a? Integer or count != 1
 		modes = [modes] * count if count > 1 and modes.is_a? Integer 
 		modes = modes.to_a if modes.is_a? Range
     
