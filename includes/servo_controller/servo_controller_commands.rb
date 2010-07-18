@@ -16,7 +16,7 @@ module ServoControllerCommands
     
     raise ArgumentError, "Not enough modes provided", caller if modes.size < count
     
-    # Should other modes be implimented?
+    # Should other modes be implimented?    
     modes.map do |mode|
       case mode
       when :servo
@@ -24,7 +24,7 @@ module ServoControllerCommands
       when :input
         InputMode
       else
-        raise ArgumentError, "Mode symbol not supported", caller if mode.is_a? Symbol
+        mode
       end
     end
     
