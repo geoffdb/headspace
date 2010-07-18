@@ -14,6 +14,6 @@ class SerialInterface
   end
   
   def receive
-    @link.get_c
+    @link.read.to_i
   end
 end
