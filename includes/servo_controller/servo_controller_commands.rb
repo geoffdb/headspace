@@ -1,22 +1,21 @@
-# This class is used to provide the correct format
-# for the serial interface
-class ReversedByteInteger
-  attr_reader :value
-	
-	def initialize(value)
-		@value = value
-	end
-	
-	def chr
-		(@value - ((@value / 255) * 255)).chr + (@value / 255).chr
-	end
-end
-
 module ServoControllerCommands
-  
-	# Define a few constants
+  # Define a few constants
 	ServoMode = 25
   InputMode = 23
+  
+  # This class is used to provide the correct format
+  # for the serial interface
+  class ReversedByteInteger
+    attr_reader :value
+    
+  	def initialize(value)
+      @value = value
+    end
+    
+  	def chr
+      (@value - ((@value / 255) * 255)).chr + (@value / 255).chr
+    end
+  end
   
   # Set a port(s) into servo mode.
   def init_servos(first_servo, count)
