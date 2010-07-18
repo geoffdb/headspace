@@ -2,20 +2,6 @@ require 'rubygems'
 require './serial_interface.rb'
 require './servo_controller_commands.rb'
 
-# This class is used to provide the correct format
-# for the serial interface
-class ReversedByteInteger
-  attr_reader :value
-	
-	def initialize(value)
-		@value = value
-	end
-	
-	def chr
-		(@value - ((@value / 255) * 255)).chr + (@value / 255).chr
-	end
-end
-
 # Impliments a servo-controller on a fairly low level
 class ServoController
   

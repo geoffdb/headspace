@@ -1,3 +1,17 @@
+# This class is used to provide the correct format
+# for the serial interface
+class ReversedByteInteger
+  attr_reader :value
+	
+	def initialize(value)
+		@value = value
+	end
+	
+	def chr
+		(@value - ((@value / 255) * 255)).chr + (@value / 255).chr
+	end
+end
+
 module ServoControllerCommands
   
 	# Define a few constants
