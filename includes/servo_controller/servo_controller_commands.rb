@@ -14,7 +14,7 @@ module ServoControllerCommands
 		modes = [modes] * count if count > 1 and modes.is_a? Integer 
 		modes = modes.to_a if modes.is_a? Range
     
-    raise ArgumentError, "Not enough modes provided", caller if locations.size < count
+    raise ArgumentError, "Not enough modes provided", caller if modes.size < count
     
     # Should other modes be implimented?
     modes.map do |mode|
