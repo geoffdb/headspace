@@ -17,7 +17,7 @@ module ServoControllerCommands
     raise ArgumentError, "Not enough modes provided", caller if modes.size < count
     
     # Should other modes be implimented?    
-    modes.map do |mode|
+    modes.map! do |mode|
       case mode
       when :servo
         ServoMode
