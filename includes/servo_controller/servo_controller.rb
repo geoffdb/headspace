@@ -33,7 +33,7 @@ class ServoController
 		
 		result = @link.receive
     
-    if result == 0 and return_true_value = false
+    if result == 0 and !return_true_value
       true
     else
       result
