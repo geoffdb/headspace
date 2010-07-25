@@ -21,7 +21,7 @@ class ServoController
 	
   # This method takes an array of arguments and creates a
   # commandstring, sends it and then returs the reply.
-	def send_command(args)
+	def send_command(args, return_true_value = false)
 		command = args.inject(CommHeader.dup) {|a,b| a + b.chr}
 		
     if @debug
@@ -33,7 +33,7 @@ class ServoController
 		
 		result = @link.receive
     
-    if result == 0
+    if result == 0 and return_true_value = false
       true
     else
       result

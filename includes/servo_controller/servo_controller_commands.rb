@@ -77,7 +77,7 @@ module ServoControllerCommands
   
   # This is for digital channels, analouge not implimented
   def get_input(channel)
-    send_command([8, channel, 0])
+    send_command([8, channel, 0], true)
   end
   
   private
