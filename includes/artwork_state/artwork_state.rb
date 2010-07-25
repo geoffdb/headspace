@@ -21,7 +21,7 @@ class ArtworkState
   GridSize = 16
   
   def initialize
-    @servos = Array.new(256) {ArtworkStateServo.new}
+    @servos = Array.new(GridSize ** 2) {ArtworkStateServo.new}
   end
   
   def servo(*args)
