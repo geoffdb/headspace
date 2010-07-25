@@ -1,10 +1,13 @@
-1280045574
+1280049351
 ArtworkState	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkState
 ArtworkStateServo	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkStateServo
 CommHeader	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller.rb		CommHeader =
 GridSize	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  GridSize =
+IdInputs	/home/thomas/Documents/Projects/headspace/includes/servo_controller/init_servo_controllers.rb	  IdInputs =
 InputMode	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller_commands.rb	  InputMode =
+InterfaceManager	/home/thomas/Documents/Projects/headspace/includes/servo_controller/init_servo_controllers.rb	class InterfaceManager
 ReversedByteInteger	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller_commands.rb	  class ReversedByteInteger
+SearchPath	/home/thomas/Documents/Projects/headspace/includes/servo_controller/init_servo_controllers.rb	  SearchPath =
 SerialInterface	/home/thomas/Documents/Projects/headspace/includes/servo_controller/serial_interface.rb	class SerialInterface
 ServoController	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller.rb	class ServoController
 ServoControllerCommands	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller_commands.rb	module ServoControllerCommands
@@ -17,10 +20,12 @@ get_servo	/home/thomas/Documents/Projects/headspace/includes/servo_controller/se
 init_servos	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller_commands.rb	  def init_servos
 initialize	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def initialize
 initialize	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def initialize
+initialize	/home/thomas/Documents/Projects/headspace/includes/servo_controller/init_servo_controllers.rb	  def initialize
 initialize	/home/thomas/Documents/Projects/headspace/includes/servo_controller/serial_interface.rb	  def initialize
 initialize	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller.rb		def initialize
 initialize	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller_commands.rb	  	def initialize
 inspect	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def inspect
+interfaces	/home/thomas/Documents/Projects/headspace/includes/servo_controller/init_servo_controllers.rb	  attr_reader :interfaces
 intermediaries	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def intermediaries
 receive	/home/thomas/Documents/Projects/headspace/includes/servo_controller/serial_interface.rb	  def receive
 reverse_byte_int	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller_commands.rb	  def reverse_byte_int

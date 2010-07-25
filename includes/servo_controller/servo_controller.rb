@@ -1,4 +1,3 @@
-require 'rubygems'
 require './serial_interface.rb'
 require './servo_controller_commands.rb'
 
