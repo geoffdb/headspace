@@ -1,4 +1,4 @@
-require './serial_controller.rb'
+require './servo_controller.rb'
 
 # This file probes all ttyUSB devices found and then
 # creates new SercoController interfaces. It then uses
@@ -24,7 +24,7 @@ class InterfaceManager
       interface = ServoController.new(port)
       
       # Get the details of the id ports
-      id = IdInputs.map {|x| interface.get_input(x)}.inject(0) {|code, data| code * 2 + data }
+      id = IdInputs.map {|x| interface.get_input(x)}.map {|x| 1 if x}.map {|x| x.to_i}.inject(0) {|code, data| code * 2 + data }
       
       @interfaces[id] = interface
     end
