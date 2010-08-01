@@ -1,3 +1,3 @@
-require './interface_manager.rb'
+require "servo_controller/interface_manager.rb"
 
 @interfaces = InterfaceManager.new

@@ -1,4 +1,4 @@
-require './servo_controller.rb'
+require "servo_controller/servo_controller.rb"
 
 # This file probes all ttyUSB devices found and then
 # creates new SercoController interfaces. It then uses

@@ -1,5 +1,5 @@
-require './serial_interface.rb'
-require './servo_controller_commands.rb'
+require "servo_controller/serial_interface.rb"
+require "servo_controller/servo_controller_commands.rb"
 
 # Impliments a servo-controller on a fairly low level
 class ServoController
