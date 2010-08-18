@@ -3,6 +3,7 @@ require "servo_controller/servo_controller_commands.rb"
 
 # Impliments a servo-controller on a fairly low level
 class ServoController
+  attr_accessor :port
   
   # Here we mixin the commands
   include ServoControllerCommands
@@ -15,6 +16,7 @@ class ServoController
 	def initialize(port, debug = false)
 		@link = SerialInterface.new(port)
     @debug = debug
+    @port = port
   end
 	
   private

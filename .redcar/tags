@@ -1,4 +1,4 @@
-1282135554
+1282135854
 ArtworkState	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkState
 ArtworkStateServo	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkStateServo
 CommHeader	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller.rb		CommHeader =
@@ -27,6 +27,7 @@ initialize	/home/thomas/Documents/Projects/headspace/includes/servo_controller/s
 inspect	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def inspect
 interfaces	/home/thomas/Documents/Projects/headspace/includes/servo_controller/interface_manager.rb	  attr_reader :interfaces
 intermediaries	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def intermediaries
+port	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller.rb	  attr_accessor :port
 receive	/home/thomas/Documents/Projects/headspace/includes/servo_controller/serial_interface.rb	  def receive
 reverse_byte_int	/home/thomas/Documents/Projects/headspace/includes/servo_controller/servo_controller_commands.rb	  def reverse_byte_int
 send	/home/thomas/Documents/Projects/headspace/includes/servo_controller/serial_interface.rb	  def send
