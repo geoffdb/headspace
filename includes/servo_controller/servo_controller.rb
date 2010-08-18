@@ -3,7 +3,7 @@ require "servo_controller/servo_controller_commands.rb"
 
 # Impliments a servo-controller on a fairly low level
 class ServoController
-  attr_accessor :port
+  attr_reader :port
   
   # Here we mixin the commands
   include ServoControllerCommands
