@@ -1,4 +1,4 @@
-1283687028
+1283687403
 ArtworkState	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkState
 ArtworkStateServo	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkStateServo
 CommHeader	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb		CommHeader =
@@ -9,7 +9,7 @@ IdInputs	/home/thomas/Documents/Projects/headspace/includes/hardware/interface_m
 InputMode	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  InputMode =
 InterfaceManager	/home/thomas/Documents/Projects/headspace/includes/hardware/interface_manager.rb	class InterfaceManager
 MatrixController	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	class MatrixController
-OutputModeHight	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  OutputModeHight =
+OutputModeHigh	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  OutputModeHigh =
 OutputModeLow	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  OutputModeLow =
 QuadrantRanges	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	  QuadrantRanges =
 ReversedByteInteger	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  class ReversedByteInteger

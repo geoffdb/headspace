@@ -3,7 +3,7 @@ module ServoControllerCommands
 	ServoMode = 25
   InputMode = 23
   OutputModeLow = 21
-  OutputModeHight = 22
+  OutputModeHigh = 22
   
   # This class is used to provide the correct format
   # for the serial interface
