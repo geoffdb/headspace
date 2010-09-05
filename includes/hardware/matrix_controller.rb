@@ -7,7 +7,7 @@ class MatrixController
   
   def send_command(interface, command, args)
     # Using the __send__ method incase the interface impliments its own send method
-    @interfaces[interfaces].__send__(command, *args)
+    @interfaces[interface].__send__(command, *args)
   end
   
   # Handles a number 0..255, and returns book-style quadrant, 0..3.
