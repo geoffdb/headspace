@@ -38,7 +38,7 @@ class MatrixController
       QuadrantRanges.each_with_index do |range, index|
         if range.include? servo
           # +1 handles the boards prefered indexing
-          quadrants[index] << servo + 1
+          quadrants[index] << (servo + 1) - index * 64
         end
       end
     end
