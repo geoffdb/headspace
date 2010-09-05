@@ -1,6 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    activerecord (2.3.8)
+      activesupport (= 2.3.8)
+    activesupport (2.3.8)
     require_all (1.1.0)
     serialport (1.0.3)
 
@@ -8,5 +11,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord (= 2.3.8)
   require_all (= 1.1.0)
   serialport (= 1.0.3)

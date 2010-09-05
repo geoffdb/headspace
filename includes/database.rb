@@ -12,5 +12,6 @@ ActiveRecord::Base.establish_connection(
     :dbfile  => "./data/db.sqlite"
 )
 
-require_all "data/schema"
-require_all "data/models"
+
+require_all File.join(File.dirname(__FILE__), "data/schema") 
+require_all File.join(File.dirname(__FILE__), "data/models")
