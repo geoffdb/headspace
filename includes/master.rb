@@ -32,9 +32,5 @@ require "hardware/grid_controller"
 # TODO: Currently an empty class.
 require "hardware/io_controller"
 
-# Check if we need to set debug mode, and then init the hardware
-if const_defined "DEBUG"
-  @com = InterfaceManager.new(true)
-else
-  @com = InterfaceManager.new
-end
+# Initialize the hardware
+require "hardware/init"

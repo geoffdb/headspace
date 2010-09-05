@@ -24,8 +24,8 @@ module ServoControllerCommands
 	end
   
   def set_modes(first_servo, modes, count = 1)
-    count = modes.to_a.size unless modes.is_a? Integer || modes.is_a? Symbol || count != 1
-		modes = [modes] * count if modes.is_a? Integer || modes.is_a? Symbol
+    count = modes.to_a.size unless modes.is_a?(Integer) || modes.is_a?(Symbol) || count != 1
+		modes = [modes] * count if modes.is_a?(Integer) || modes.is_a?(Symbol)
     
     raise ArgumentError, "Not enough modes provided", caller if modes.size < count
     
@@ -52,9 +52,9 @@ module ServoControllerCommands
   end
 	
 	def set_servos(first_servo, locations, count = 1)
-    count = locations.to_a.size unless locations.is_a? Integer || count != 1
-		locations = [locations] * count if count > 1 && locations.is_a? Integer
-    locations = [locations] if count == 1 && locations.is_a? Integer
+    count = locations.to_a.size unless locations.is_a?(Integer) || count != 1
+		locations = [locations] * count if count > 1 && locations.is_a?(Integer)
+    locations = [locations] if count == 1 && locations.is_a?(Integer)
 		locations = locations.to_a if locations.is_a? Range
     
     raise ArgumentError, "Not enough locations provided", caller if locations.size < count
@@ -69,8 +69,8 @@ module ServoControllerCommands
   end
 	
 	def set_speeds(first_servo, speeds, count = 1)
-		speeds = speeds.to_a * count if speeds.is_a? Integer
-    speeds = speeds.to_a if speeds.is_a? Range
+		speeds = speeds.to_a * count if speeds.is_a?(Integer)
+    speeds = speeds.to_a if speeds.is_a?(Range)
     
     raise ArgumentError, "Not enough speeds provided", caller if speeds.size < count
     
