@@ -1,45 +1,73 @@
-class ServoGridController
+class ServoGridController < MatrixController
   # Controlls the entire grid.
   
   class ServoState
     attr_accessor :position, :speed
   end
   
-  def initialize(interfaces)
-    @interfaces = interfaces
-  end
-  
   # Servos are numbered 0..255, book style.
   # Mapped to 0..63 on each interface
-  # Inputs are numbered 0..15, 0..3 on interface 1, 4..7 on 2 etc.
-  # Inputs are mapped to ports 73..76
-  # Outputs are numbered 0..15, as with inputs
-  # Mapped to ports 77..80
   
-  
-  
-  private
-  
-  def send_command(interface, command, args)
-    @interfaces[interfaces]
-  end
-  
-  def quadrant(n)
-    if n % 16 > 7
-      # We're on the right
-      if (n / 16) > 7
-        # At the bottom
-        return 4
+  def method_missing(method, *args)
+    if args.size == 1
+      # One argrument, very little work to do here.
+      if args.first.is_a? Array
+        quads = map_servos(args.first)
+        quads.each_with_index do |servos, index|
+          if !servos.empty?
+            send_command(index, method, [servos])
+          end
+        end
       else
-        return 2
+        # Must just be an int
+        quads = map_servos([args.first])
+        quads.each_with_index do |servos, index|
+          if !servos.empty?
+            send_command(index, method, [servos.first])
+          end
+        end
+      end
+    elsif args.size == 2
+      # Args are [start_servo, count]
+      # We need to extract this into an array of ids
+      quads = map_servos(Array.new(args.last) {|x| x + args.first})
+      quads.each_with_index do |servos, index|
+          if !servos.empty?
+            # Extract back into a start and count
+            send_command(index, method, [servos.first, servos.size])
+          end
+        end
       end
     else
-      # On the left
-      if (n / 16) > 7
-        return 3
+      # Three arguments
+      # [start, details, count]
+      if details.is_a? Integer || details.is_a? Symbol
+        # This is easy to handle, a bit like for two arguments
+        quads = map_servos(Array.new(args.last) {|x| x + args.first})
+        quads.each_with_index do |servos, index|
+            if !servos.empty?
+              # Extract back into a start and count
+              send_command(index, method, [servos.first, args[1], servos.size])
+            end
+          end
+        end
       else
-        return 1
+        # Bit tricker, details is an array, we need to seperate it with the ids
+        quads = map_servos(Array.new(args.last) {|x| x + args.first})
+        # Match each servo id with its detail
+        quads.map! {|x| x.map {|y| [y, args[1].shift]}}
+        quads.each_with_index do |servos, index|
+            if !servos.empty?
+              # Extract back into a start and count
+              send_command(index, method, [servos.first.first, servos[1].map {|x| x.last}, servos.size])
+            end
+          end
+        end
       end
     end
   end
+  
+  private
+  
+  
 end

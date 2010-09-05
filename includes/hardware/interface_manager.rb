@@ -25,6 +25,8 @@ class InterfaceManager
       id = IdInputs.map {|x| interface.get_input(x)}.map {|x| x / 255}.inject(0) {|code, data| code * 2 + data }
       
       @servo_interfaces[id] = interface
+      
+      # Set some defaults on the interface while we are here.
     end
   end
 end

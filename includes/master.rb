@@ -22,15 +22,15 @@ require "hardware/serial_interface"
 require "hardware/servo_controller_commands"
 require "hardware/servo_controller"
 
-# IO controller, seperates IO controll from servo
-# TODO: Currently an empty class.
-require "hardware/io_controller"
-
 # Deals with finding an identifying the servo controllers
 require "hardware/interface_manager"
 
-# Combines the servo controllers into a matrix controller
+# Combines the servo controllers into a grid, uses MatrixController
 require "hardware/grid_controller"
+
+# IO controller, seperates IO controll from servo, uses MatrixController
+# TODO: Currently an empty class.
+require "hardware/io_controller"
 
 # Check if we need to set debug mode, and then init the hardware
 if const_defined "DEBUG"

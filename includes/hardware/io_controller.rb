@@ -1,3 +1,3 @@
-class IOController
+class IOController < MatrixController
   
 end
