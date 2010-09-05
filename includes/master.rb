@@ -25,6 +25,9 @@ require "hardware/servo_controller"
 # Deals with finding an identifying the servo controllers
 require "hardware/interface_manager"
 
+# Matrix controller, used in the following two includes
+require "hardware/matrix_controller"
+
 # Combines the servo controllers into a grid, uses MatrixController
 require "hardware/grid_controller"
 

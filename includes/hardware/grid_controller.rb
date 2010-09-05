@@ -1,4 +1,4 @@
-class ServoGridController < MatrixController
+class GridController < MatrixController
   # Controlls the entire grid.
   
   class ServoState
@@ -32,10 +32,9 @@ class ServoGridController < MatrixController
       # We need to extract this into an array of ids
       quads = map_servos(Array.new(args.last) {|x| x + args.first})
       quads.each_with_index do |servos, index|
-          if !servos.empty?
-            # Extract back into a start and count
-            send_command(index, method, [servos.first, servos.size])
-          end
+        if !servos.empty?
+          # Extract back into a start and count
+          send_command(index, method, [servos.first, servos.size])
         end
       end
     else
@@ -45,10 +44,9 @@ class ServoGridController < MatrixController
         # This is easy to handle, a bit like for two arguments
         quads = map_servos(Array.new(args.last) {|x| x + args.first})
         quads.each_with_index do |servos, index|
-            if !servos.empty?
-              # Extract back into a start and count
-              send_command(index, method, [servos.first, args[1], servos.size])
-            end
+          if !servos.empty?
+            # Extract back into a start and count
+            send_command(index, method, [servos.first, args[1], servos.size])
           end
         end
       else
@@ -57,10 +55,9 @@ class ServoGridController < MatrixController
         # Match each servo id with its detail
         quads.map! {|x| x.map {|y| [y, args[1].shift]}}
         quads.each_with_index do |servos, index|
-            if !servos.empty?
-              # Extract back into a start and count
-              send_command(index, method, [servos.first.first, servos[1].map {|x| x.last}, servos.size])
-            end
+          if !servos.empty?
+            # Extract back into a start and count
+            send_command(index, method, [servos.first.first, servos[1].map {|x| x.last}, servos.size])
           end
         end
       end

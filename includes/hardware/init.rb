@@ -1,5 +1,5 @@
 # Check if we need to set debug mode, and then load the interfaces
-if const_defined "DEBUG"
+if Kernel.const_defined? "DEBUG"
   @com = InterfaceManager.new(true)
 else
   @com = InterfaceManager.new

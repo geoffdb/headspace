@@ -1,7 +1,8 @@
-1283666723
+1283667468
 ArtworkState	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkState
 ArtworkStateServo	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkStateServo
 CommHeader	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb		CommHeader =
+GridController	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	class GridController 
 GridSize	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  GridSize =
 IOController	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	class IOController 
 IdInputs	/home/thomas/Documents/Projects/headspace/includes/hardware/interface_manager.rb	  IdInputs =
@@ -15,7 +16,6 @@ SearchPath	/home/thomas/Documents/Projects/headspace/includes/hardware/interface
 SerialInterface	/home/thomas/Documents/Projects/headspace/includes/hardware/serial_interface.rb	class SerialInterface
 ServoController	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb	class ServoController
 ServoControllerCommands	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	module ServoControllerCommands
-ServoGridController	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	class ServoGridController 
 ServoMode	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb		ServoMode =
 ServoState	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	  class ServoState
 chr	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  	def chr
