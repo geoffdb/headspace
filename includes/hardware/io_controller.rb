@@ -6,16 +6,16 @@ class IOController < MatrixController
   end
   
   def led_on(n)
-    send_command(n, "set_modes", 78, :on, 1)
+    send_command(n, "set_modes", [78, :on, 1])
   end
   
   def led_off(n)
-    send_command(n, "set_modes", 78, :off, 1)
+    send_command(n, "set_modes", [78, :off, 1])
   end
   
   private
   
   def read_input(n)
-    send_command(0, "get_input", n + 79)
+    send_command(0, "get_input", [n + 79])
   end
 end
