@@ -13,7 +13,7 @@ end
 class ArtworkState
   attr_accessor :servos
   
-  # Represents the state of the artwork at a instant.
+  # Represents the state of the artwork at an instant.
   # Supports math to allow intermedatories to be
   # created easily
   
@@ -25,8 +25,7 @@ class ArtworkState
   end
   
   def servo(*args)
-    case args.size
-    when 1
+    if args.size == 1
       @servos[args.first]
     else
       @servos[args[0] + args[1] * GridSize]

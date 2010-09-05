@@ -1,0 +1,10 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    serialport (1.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  serialport (= 1.0.3)
