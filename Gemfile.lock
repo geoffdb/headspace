@@ -1,10 +1,12 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    require_all (1.1.0)
     serialport (1.0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  require_all (= 1.1.0)
   serialport (= 1.0.3)

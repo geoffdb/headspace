@@ -9,7 +9,6 @@ class GridController < MatrixController
   # Mapped to 0..63 on each interface
   
   def method_missing(method, *args)
-    puts method
     if args.size == 1
       # One argrument, very little work to do here.
       if args.first.is_a?(Array)

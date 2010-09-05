@@ -2,7 +2,8 @@ module ServoControllerCommands
   # Define a few constants
 	ServoMode = 25
   InputMode = 23
-  OutputMode = 00
+  OutputModeLow = 21
+  OutputModeHight = 22
   
   # This class is used to provide the correct format
   # for the serial interface
@@ -11,6 +12,10 @@ module ServoControllerCommands
     
   	def initialize(value)
       @value = value
+    end
+    
+    def inspect
+      @value.to_s
     end
     
   	def chr
@@ -37,7 +42,11 @@ module ServoControllerCommands
       when :input
         InputMode
       when :output
-        OutputMode
+        OutputModeLow
+      when :on
+        OutputModeHigh
+      when :off
+        OutputModeLow
       else
         mode
       end
