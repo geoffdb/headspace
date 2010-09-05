@@ -27,6 +27,13 @@ class InterfaceManager
       @servo_interfaces[id] = interface
       
       # Set some defaults on the interface while we are here.
+      # Set 1..64 as servos,
+      # 78 as output
+      @servo_interfaces[id].set_modes(1, :servo, 64)
+      @servo_interfaces[id].set_modes(78, :output)
+      
+      # 79..82 on board 0 as input
+      @servo_interfaces[id].set_modes(79, :input, 4) if id == 0
     end
   end
 end

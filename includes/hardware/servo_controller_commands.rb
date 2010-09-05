@@ -24,8 +24,8 @@ module ServoControllerCommands
 	end
   
   def set_modes(first_servo, modes, count = 1)
-    count = modes.to_a.size unless (modes.is_a? Integer || modes.is_a? Symbol) || count != 1
-		modes = [modes] * count if (modes.is_a? Integer || modes.is_a? Symbol)
+    count = modes.to_a.size unless modes.is_a? Integer || modes.is_a? Symbol || count != 1
+		modes = [modes] * count if modes.is_a? Integer || modes.is_a? Symbol
     
     raise ArgumentError, "Not enough modes provided", caller if modes.size < count
     
@@ -36,6 +36,8 @@ module ServoControllerCommands
         ServoMode
       when :input
         InputMode
+      when :output
+        OutputMode
       else
         mode
       end
