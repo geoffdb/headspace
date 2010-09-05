@@ -11,7 +11,7 @@ class ServoGridController < MatrixController
   def method_missing(method, *args)
     if args.size == 1
       # One argrument, very little work to do here.
-      if args.first.is_a? Array
+      if args.first.is_a?(Array)
         quads = map_servos(args.first)
         quads.each_with_index do |servos, index|
           if !servos.empty?
@@ -41,7 +41,7 @@ class ServoGridController < MatrixController
     else
       # Three arguments
       # [start, details, count]
-      if details.is_a? Integer || details.is_a? Symbol
+      if details.is_a?(Integer) || details.is_a?(Symbol)
         # This is easy to handle, a bit like for two arguments
         quads = map_servos(Array.new(args.last) {|x| x + args.first})
         quads.each_with_index do |servos, index|
