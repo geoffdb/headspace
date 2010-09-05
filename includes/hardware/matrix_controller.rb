@@ -42,6 +42,7 @@ class MatrixController
         end
       end
     end
+    quadrants
   end
 end
 

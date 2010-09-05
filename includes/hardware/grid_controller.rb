@@ -43,6 +43,7 @@ class GridController < MatrixController
       if args[1].is_a?(Integer) || args[1].is_a?(Symbol)
         # This is easy to handle, a bit like for two arguments
         quads = map_servos(Array.new(args.last) {|x| x + args.first})
+        puts quads.inspect;
         quads.each_with_index do |servos, index|
           if !servos.empty?
             # Extract back into a start and count
