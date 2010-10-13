@@ -1,6 +1,10 @@
 class GridController < MatrixController
   # Controlls the entire grid.
   
+  # Constants
+  InPosition = 1865
+  OutPosition = 1000
+  
   class ServoState
     attr_accessor :position, :speed
   end
@@ -28,6 +32,8 @@ class GridController < MatrixController
         end
       end
     elsif args.size == 2
+      # TODO: Allow [start_servo, descriptions]
+      
       # Args are [start_servo, count]
       # We need to extract this into an array of ids
       quads = map_servos(Array.new(args.last) {|x| x + args.first})
@@ -63,6 +69,12 @@ class GridController < MatrixController
         end
       end
     end
+  end
+  
+  def load_artwork_state(state)
+    raise ArgumentError unless state.is_a? ArtworkState
+    positions = state.to_a.map {|x| (InPosition + ((OutPosition - Inposition) * (x / 100.0))).to_i}
+    self.set_servos(1, positions, 256)
   end
   
   private

@@ -5,6 +5,7 @@ GEM
       activesupport (= 2.3.8)
     activesupport (2.3.8)
     require_all (1.1.0)
+    ruby-pixels (0.0.1)
     serialport (1.0.3)
 
 PLATFORMS
@@ -13,4 +14,5 @@ PLATFORMS
 DEPENDENCIES
   activerecord (= 2.3.8)
   require_all (= 1.1.0)
+  ruby-pixels (= 0.0.1)
   serialport (= 1.0.3)

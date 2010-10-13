@@ -1,4 +1,4 @@
-1283687403
+1286972088
 ArtworkState	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkState
 ArtworkStateServo	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	class ArtworkStateServo
 CommHeader	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb		CommHeader =
@@ -6,9 +6,11 @@ GridController	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_
 GridSize	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  GridSize =
 IOController	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	class IOController 
 IdInputs	/home/thomas/Documents/Projects/headspace/includes/hardware/interface_manager.rb	  IdInputs =
+InPosition	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	  InPosition =
 InputMode	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  InputMode =
 InterfaceManager	/home/thomas/Documents/Projects/headspace/includes/hardware/interface_manager.rb	class InterfaceManager
 MatrixController	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	class MatrixController
+OutPosition	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	  OutPosition =
 OutputModeHigh	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  OutputModeHigh =
 OutputModeLow	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  OutputModeLow =
 QuadrantRanges	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	  QuadrantRanges =
@@ -21,6 +23,7 @@ ServoMode	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_cont
 ServoState	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	  class ServoState
 chr	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  	def chr
 dup	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def dup
+from_tga	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def self.from_tga
 get_input	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  def get_input
 get_mode	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  def get_mode
 get_pir	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def get_pir
@@ -38,6 +41,7 @@ inspect	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_contro
 intermediaries	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def intermediaries
 led_off	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def led_off
 led_on	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def led_on
+load_artwork_state	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	  def load_artwork_state
 map_servos	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	  def map_servos
 method_missing	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	  def method_missing
 port	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb	  attr_reader :port
@@ -56,5 +60,6 @@ set_modes	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_cont
 set_servos	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb		def set_servos
 set_speeds	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb		def set_speeds
 speed	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	    attr_accessor :position, :speed
+to_a	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  def to_a
 value	/home/thomas/Documents/Projects/headspace/includes/artwork_state/artwork_state.rb	  attr_accessor :value
 value	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	    attr_reader :value
