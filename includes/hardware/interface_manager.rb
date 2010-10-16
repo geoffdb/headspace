@@ -22,7 +22,7 @@ class InterfaceManager
       interface = ServoController.new(port, debug)
       
       # Get the details of the id ports
-      id = IdInputs.map {|x| interface.get_input(x)}.map {|x| x / 255}.inject(0) {|code, data| code * 2 + data }
+      id = IdInputs.map {|x| interface.get_input(x)}.map {|x| (1 - (x / 255)).abs}.inject(0) {|code, data| code * 2 + data }
       
       @servo_interfaces[id] = interface
       

@@ -12,3 +12,4 @@ Bundler.require(:default)
 # Now to require our own libraries.
 require "hardware"
 require "database"
+require "states"

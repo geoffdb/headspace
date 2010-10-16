@@ -1,5 +1,5 @@
 class MatrixController
-  QuadrantRanges = [0..63, 64..127, 128..191, 192..255]
+  QuadrantMappings = [0..63, 64..127, 128..191, 192..255]
   
   def initialize(interfaces)
     @interfaces = interfaces
@@ -35,7 +35,7 @@ class MatrixController
   def map_servos(servos)
     quadrants = [[], [], [], []]
     servos.each do |servo|
-      QuadrantRanges.each_with_index do |range, index|
+      QuadrantMappings.each_with_index do |range, index|
         if range.include? servo
           # +1 handles the boards prefered indexing
           quadrants[index] << (servo + 1) - index * 64
