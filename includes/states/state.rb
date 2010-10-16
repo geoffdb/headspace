@@ -1,4 +1,4 @@
-class ArtworkStateServo
+class StateServo
   attr_accessor :value
   
   def initialize
@@ -11,7 +11,7 @@ class ArtworkStateServo
   end
 end
 
-class ArtworkState
+class State
   attr_accessor :servos
   
   # Represents the state of the artwork at an instant.
