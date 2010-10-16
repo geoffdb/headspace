@@ -73,7 +73,7 @@ class GridController < MatrixController
   
   def load_state(state)
     raise ArgumentError unless state.is_a? State
-    positions = state.to_a.map {|x| (InPosition + ((OutPosition - Inposition) * (x / 100.0))).to_i}
+    positions = state.to_a.map {|x| (InPosition + ((OutPosition - InPosition) * (x / 100.0))).to_i}
     self.set_servos(1, positions, 256)
   end
   
