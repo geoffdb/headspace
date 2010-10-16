@@ -1,6 +1,4 @@
-# ========
-# Hardware
-# ========
+# Setup all hardware interfacing. Creates a sane interface for the main logic to use.
 
 # Smooths out the serial interface, and sets up the link
 require "hardware/serial_interface"
