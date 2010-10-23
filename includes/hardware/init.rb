@@ -7,3 +7,4 @@ end
 
 # Create a new GridController instance
 @grid = GridController.new(@com.servo_interfaces)
+@io = IOController.new(@com.servo_interfaces)

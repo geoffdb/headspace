@@ -1,5 +1,19 @@
 class MatrixController
-  QuadrantMappings = [0..63, 64..127, 128..191, 192..255]
+  QuadrantMappings = [{}, {}, {}, {}]
+  
+  # To help generating the mappings
+  GridSize = 16
+  QuadrantSize = 8
+  
+  # Generate the contents of QuadrantMappings
+  8.times do |y|
+    8.times do |x|
+      QuadrantMappings[0][GridSize * y + x] = QuadrantSize * y + x
+      QuadrantMappings[1][GridSize * y + (x + QuadrantSize)] = QuadrantSize * y + x
+      QuadrantMappings[2][GridSize * (y + QuadrantSize) + x] = QuadrantSize * y + x
+      QuadrantMappings[3][GridSize * (y + QuadrantSize) + (x + QuadrantSize)] = QuadrantSize * y + x 
+    end
+  end
   
   def initialize(interfaces)
     @interfaces = interfaces
@@ -35,10 +49,10 @@ class MatrixController
   def map_servos(servos)
     quadrants = [[], [], [], []]
     servos.each do |servo|
-      QuadrantMappings.each_with_index do |range, index|
-        if range.include? servo
+      QuadrantMappings.each_with_index do |mapping, index|
+        if mapping.keys.include? servo
           # +1 handles the boards prefered indexing
-          quadrants[index] << (servo + 1) - index * 64
+          quadrants[index] << mapping[servo] + 1
         end
       end
     end

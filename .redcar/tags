@@ -1,6 +1,9 @@
-1287228425
+1287836670
 CommHeader	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb		CommHeader =
+ExcludedServos	/home/thomas/Documents/Projects/headspace/test.rb	ExcludedServos =
+ExcludedServos	/home/thomas/Documents/Projects/headspace/testc.rb	ExcludedServos =
 GridController	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	class GridController 
+GridSize	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	  GridSize =
 GridSize	/home/thomas/Documents/Projects/headspace/includes/states/state.rb	  GridSize =
 IOController	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	class IOController 
 IdInputs	/home/thomas/Documents/Projects/headspace/includes/hardware/interface_manager.rb	  IdInputs =
@@ -12,6 +15,7 @@ OutPosition	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_con
 OutputModeHigh	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  OutputModeHigh =
 OutputModeLow	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  OutputModeLow =
 QuadrantMappings	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	  QuadrantMappings =
+QuadrantSize	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	  QuadrantSize =
 ReversedByteInteger	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  class ReversedByteInteger
 SearchPath	/home/thomas/Documents/Projects/headspace/includes/hardware/interface_manager.rb	  SearchPath =
 SerialInterface	/home/thomas/Documents/Projects/headspace/includes/hardware/serial_interface.rb	class SerialInterface
@@ -39,6 +43,8 @@ initialize	/home/thomas/Documents/Projects/headspace/includes/states/state.rb	  
 inspect	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	    def inspect
 inspect	/home/thomas/Documents/Projects/headspace/includes/states/state.rb	  def inspect
 intermediaries	/home/thomas/Documents/Projects/headspace/includes/states/state.rb	  def intermediaries
+led_blink	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def led_blink
+led_chase	/home/thomas/Documents/Projects/headspace/includes/utill.rb	def led_chase
 led_off	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def led_off
 led_on	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def led_on
 load_state	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	  def load_state
@@ -46,9 +52,13 @@ map_servos	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_co
 method_missing	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	  def method_missing
 port	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb	  attr_reader :port
 position	/home/thomas/Documents/Projects/headspace/includes/hardware/grid_controller.rb	    attr_accessor :position, :speed
+power_down	/home/thomas/Documents/Projects/headspace/includes/utill.rb	def power_down
+power_up	/home/thomas/Documents/Projects/headspace/includes/utill.rb	def power_up
 quadrant	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	  def quadrant
 read_input	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def read_input
 receive	/home/thomas/Documents/Projects/headspace/includes/hardware/serial_interface.rb	  def receive
+relay_off	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def relay_off
+relay_on	/home/thomas/Documents/Projects/headspace/includes/hardware/io_controller.rb	  def relay_on
 reverse_byte_int	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  def reverse_byte_int
 send	/home/thomas/Documents/Projects/headspace/includes/hardware/serial_interface.rb	  def send
 send_command	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_controller.rb	  def send_command

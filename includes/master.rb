@@ -13,3 +13,6 @@ Bundler.require(:default)
 require "hardware"
 require "database"
 require "states"
+
+# Handy functions
+require "utill"

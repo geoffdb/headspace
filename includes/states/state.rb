@@ -22,24 +22,34 @@ class State
   GridSize = 16
   
   def initialize
-    @servos = Array.new(GridSize ** 2) {ArtworkStateServo.new}
+    @servos = Array.new(GridSize ** 2) {StateServo.new}
   end
   
   def self.from_tga(filename)
     # This method is a crude version. Not for production use.
     # No averaging is used here, and the image is downsampled.
     
-    state = ArtworkState.new
+    state = self.new
     image = Pixels.open_tga(filename)
-    data = (0..15).to_a.map do |y|
-      image.get_row_rgb(y * 16).map {|x| (x.first.to_f / 2.56).to_i }
+    data = (0..255).to_a.map do |y|
+      image.get_row_rgb(y).map {|x| (x.first.to_f / 2.56).to_i }
     end
+    
+    data = (0..15).map do |y|
+      (0..15).map do |x|
+        data[y * 16][x * 16]
+      end
+    end
+    
+    puts data.inspect
     
     data.each_with_index do |row, y|
       row.each_with_index do |cell, x|
         state.servo(x, y).value = cell
       end
     end
+    
+    state
   end
   
   def servo(*args)

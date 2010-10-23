@@ -2,7 +2,7 @@ class GridController < MatrixController
   # Controlls the entire grid.
   
   # Constants
-  InPosition = 1865
+  InPosition = 1830
   OutPosition = 1000
   
   class ServoState
@@ -74,7 +74,9 @@ class GridController < MatrixController
   def load_state(state)
     raise ArgumentError unless state.is_a? State
     positions = state.to_a.map {|x| (InPosition + ((OutPosition - InPosition) * (x / 100.0))).to_i}
-    self.set_servos(1, positions, 256)
+    positions.each_with_index do |pos, idx|
+      set_servos(idx, pos, 1)
+    end
   end
   
   private
