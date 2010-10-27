@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="seen-bssids" mtime="1278083518" type="list" ltype="string">
+                <li type="string">
+                        <stringvalue>00:22:3f:59:46:90</stringvalue>
+                </li>
+        </entry>
+        <entry name="security" mtime="1278083518" type="string">
+                <stringvalue>802-11-wireless-security</stringvalue>
+        </entry>
+        <entry name="mode" mtime="1278083518" type="string">
+                <stringvalue>infrastructure</stringvalue>
+        </entry>
+        <entry name="ssid" mtime="1278083518" type="list" ltype="int">
+                <li type="int" value="100">
+                </li>
+                <li type="int" value="101">
+                </li>
+                <li type="int" value="102">
+                </li>
+                <li type="int" value="97">
+                </li>
+                <li type="int" value="117">
+                </li>
+                <li type="int" value="108">
+                </li>
+                <li type="int" value="116">
+                </li>
+                <li type="int" value="50">
+                </li>
+        </entry>
+        <entry name="name" mtime="1278083518" type="string">
+                <stringvalue>802-11-wireless</stringvalue>
+        </entry>
+</gconf>

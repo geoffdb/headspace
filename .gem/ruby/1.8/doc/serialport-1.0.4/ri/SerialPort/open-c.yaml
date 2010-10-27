@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: sp
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This behaves like SerialPort#new, except that you can pass a block to which the new serial port object will be passed. In this case the connection is automaticaly closed when the block has finished.
+full_name: SerialPort::open
+is_singleton: true
+name: open
+params: (port, *params) {|sp| ...}
+visibility: public

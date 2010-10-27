@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a serial port object.
+- !ruby/struct:SM::Flow::P 
+  body: <tt>port</tt> may be a port number or the file name of a defice. The number is portable; so 0 is mapped to &quot;COM1&quot; on Windows, &quot;/dev/ttyS0&quot; on Linux, &quot;/dev/cuaa0&quot; on Mac OS X, etc.
+- !ruby/struct:SM::Flow::P 
+  body: <tt>params</tt> can be used to configure the serial port. See SerialPort#set_modem_params for details
+full_name: SerialPort::new
+is_singleton: true
+name: new
+params: (port, *params)
+visibility: public

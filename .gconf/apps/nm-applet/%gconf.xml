@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="disable-connected-notifications" mtime="1278083262" type="bool" value="true">
+        </entry>
+        <entry name="suppress-wireless-networks-available" mtime="1278083232" type="bool" value="true">
+        </entry>
+</gconf>

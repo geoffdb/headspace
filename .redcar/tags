@@ -1,4 +1,4 @@
-1287836670
+1288169921
 CommHeader	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb		CommHeader =
 ExcludedServos	/home/thomas/Documents/Projects/headspace/test.rb	ExcludedServos =
 ExcludedServos	/home/thomas/Documents/Projects/headspace/testc.rb	ExcludedServos =
@@ -19,6 +19,9 @@ QuadrantSize	/home/thomas/Documents/Projects/headspace/includes/hardware/matrix_
 ReversedByteInteger	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	  class ReversedByteInteger
 SearchPath	/home/thomas/Documents/Projects/headspace/includes/hardware/interface_manager.rb	  SearchPath =
 SerialInterface	/home/thomas/Documents/Projects/headspace/includes/hardware/serial_interface.rb	class SerialInterface
+SerialPort	/home/thomas/Documents/Projects/headspace/.gem/ruby/1.8/gems/serialport-1.0.4/lib/serialport.rb	   def SerialPort
+SerialPort	/home/thomas/Documents/Projects/headspace/.gem/ruby/1.8/gems/serialport-1.0.4/lib/serialport.rb	   def SerialPort
+SerialPort	/home/thomas/Documents/Projects/headspace/.gem/ruby/1.8/gems/serialport-1.0.4/lib/serialport.rb	class SerialPort
 ServoController	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller.rb	class ServoController
 ServoControllerCommands	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb	module ServoControllerCommands
 ServoMode	/home/thomas/Documents/Projects/headspace/includes/hardware/servo_controller_commands.rb		ServoMode =

@@ -67,6 +67,9 @@ power_down
 
 first = true
 
+maxwait = 200
+minwait = 10
+
 while true
   led_chase
   
@@ -100,29 +103,28 @@ while true
   puts "power down"
   power_down
   
-  wait = (190 * rand) + 10
+  wait = ((maxwait - minwait) * rand) + minwait
   puts "sleeping for #{wait}"
   
-  thread = Thread.new do
-    t = 0
-    while true
-      sleep 4
-      t += 4
-      puts "waited for #{t} secconds"
-      puts "PIRs are #{@io.get_pir.inspect}"
-      led_chase
-    end
+  t = 0
+  while t < wait
+    sleep 1
+    t += 1
+    puts "waited for #{t} secconds, #{wait - t} remaining"
+    puts "PIRs are #{@io.get_pir.inspect}"
+    led_chase if (t % 4 == 0)
   end
-  
-  sleep wait
-  
-  thread.kill
-  
+    
   puts "awake"
   
-  while @io.get_pir == [0, 0, 0, 0]
+  while @io.get_pir != [255, 255, 255, 255]
     puts @io.get_pir.inspect
     led_chase
     sleep 4
+  end
+  
+  if (maxwait < 4 * 60 * 60) && false
+    maxwait *= 2
+    minwait *= 2
   end
 end

@@ -9,10 +9,5 @@ def power_down
 end
 
 def led_chase(wait = true, t = 0.1)
-  th = Thread.new do
-    4.times {|q| @io.led_blink(q, t); sleep (t * 2)}
-  end
-  while th.status
-    sleep 0.01
-  end  
+  4.times {|q| @io.led_blink(q, t); sleep (t * 2)}
 end
