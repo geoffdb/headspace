@@ -4,6 +4,8 @@ class SerialInterface
     @link.baud = baud
     @link.data_bits = data
     @link.stop_bits = stop
+    #@link.flow_control = SerialPort::HARD
+    @link.read_timeout = 1000
   end
   
   def send(command)

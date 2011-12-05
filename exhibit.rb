@@ -1,3 +1,8 @@
+#! /usr/local/bin/ruby
+# The above line specifies the interpreter to use.
+
+MAX_WAIT_TIME = 10 * 60
+
 require "includes/master"
 
 led_chase
@@ -67,8 +72,8 @@ power_down
 
 first = true
 
-maxwait = 200
-minwait = 10
+maxwait = MAX_WAIT_TIME / 10
+minwait = maxwait / 4
 
 while true
   led_chase
@@ -78,6 +83,7 @@ while true
     # Faces
       puts "face"
       face = Dir.glob("faces/*").random_element
+      puts face.to_s + " " + Time.now.to_s + " V2"
       state = State.from_tga(face)
       power_up
       @grid.load_state(state)
@@ -105,6 +111,7 @@ while true
   
   wait = ((maxwait - minwait) * rand) + minwait
   puts "sleeping for #{wait}"
+  puts Time.now.to_s
   
   t = 0
   while t < wait
@@ -116,15 +123,20 @@ while true
   end
     
   puts "awake"
+  puts Time.now.to_s
   
-  while @io.get_pir != [255, 255, 255, 255]
+  while @io.get_pir.map {|x| (x > 0) ? 1 : 0 }.inject(0) {|a,b| a + b} < 3
     puts @io.get_pir.inspect
     led_chase
     sleep 4
+    puts Time.now.to_s
   end
   
-  if (maxwait < 4 * 60 * 60) && false
-    maxwait *= 2
-    minwait *= 2
+  if (maxwait < MAX_WAIT_TIME)
+    maxwait *= 1.30
+    minwait *= 1.30
+  else
+    maxwait = MAX_WAIT_TIME
+    minwait = MAX_WAIT_TIME / 4
   end
 end

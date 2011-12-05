@@ -28,35 +28,13 @@ class ServoController
       puts command.inspect
     end
 		
-		#@link.send(command)
+		@link.send(command)
+    puts "Sent command" if @debug
 		
     result = nil
-    
-    th = Thread.new do
-      result = @link.receive
-    end
-    
-    sleep 0.01
-    @link.send(command)
-    puts "Sent command" if @debug
-    
-    timeout = 2
-    wait = 0
-    
-    while wait < timeout
-      sleep 0.01
-      wait += 0.01
-      if result != nil
-        puts "Received return code after #{wait} secconds" if @debug
-        break
-      end
-    end
-    
-    if result == nil
-      th.kill
-      puts "Failed to get result" if @debug
-    end
-      
+        
+    result = @link.receive
+          
     if result == 0 and !return_true_value
       true
     elsif result == nil and !return_true_value
